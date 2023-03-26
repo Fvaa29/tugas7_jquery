@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 7 - Hewan & Suaranya</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        .flex-container {
+            display: flex;
+            background-color: #CCF3EE;
+        }
+    
+        .flex-container>div {
+            background-color: #ecf0e9;
+            margin: 20px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body class="bg-body-tertiary">
+    <div class="content mx-1">
+        <div class="judul my-4" align="center">
+            <h3>Beberapa Jenis Hewan & Suaranya</h3>
+            <p class="text-muted"><small>Klik nama hewan untuk mengetahui gambar dan suaranya</small></p>
+        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button bg-danger-subtle border border-dark-subtle" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        Hewan Ternak
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body p-4" style="background-color: #EEF1FF;">
+                        <div class="flex-container shadow rounded flex-wrap justify-content-evenly">
+                            <div class="bebek p-5 rounded shadow-lg" style="cursor:pointer">Bebek</div>
+                            <div class="kambing p-5 rounded shadow-lg" style="cursor:pointer">Kambing</div>
+                            <div class="sapi p-5 rounded shadow-lg" style="cursor:pointer">Sapi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed bg-danger-subtle border border-dark-subtle" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Hewan Peliharaan
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body p-4" style="background-color: #EEF1FF;">
+                        <div class="flex-container shadow rounded flex-wrap justify-content-evenly">
+                            <div class="kucing p-5 rounded shadow-lg" style="cursor:pointer">Kucing</div>
+                            <div class="anjing p-5 rounded shadow-lg" style="cursor:pointer">Anjing</div>
+                            <div class="burung p-5 rounded shadow-lg" style="cursor:pointer">Burung</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed bg-danger-subtle border border-dark-subtle" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+                        Hewan Buas
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body p-4" style="background-color: #EEF1FF;">
+                        <div class="flex-container shadow rounded flex-wrap justify-content-evenly">
+                            <div class="badak shadow-lg p-5 rounded" style="cursor:pointer">Badak</div>
+                            <div class="serigala shadow-lg p-5 rounded" style="cursor:pointer">Serigala</div>
+                            <div class="ular p-5 shadow-lg rounded" style="cursor:pointer">Ular</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="js/jquery.js"></script>
+    <script>
+        $("document").ready(function(){
+            // hewan ternak
+            // bebek
+            $("div.bebek").click(function() {
+                $(this).css({
+                    "background":"url('images/bebek.gif') no-repeat center","background-size":"contain"
+                });
+            });
+            $("div.bebek").click(function() {
+                $("<audio></audio>").attr({
+                    'src': 'audio/suara-bebek.mp3',
+                    'volume': 0.5,
+                    'autoplay': 'autoplay'
+                }).appendTo("div");
+            });
+            // kambing
+            $("div.kambing").click(function () {
+                $(this).css({
+                    "background": "url('images/kambing.gif') no-repeat center", "background-size": "contain"
+                });
+            });
+            $("div.kambing").click(function () {
+                $("<audio></audio>").attr({
+                    'src': 'audio/suara-kambing.mp3',
+                    'volume': 0.5,
+                    'autoplay': 'autoplay'
+                }).appendTo("div");
+            });
+            // sapi
+            $("div.sapi").click(function () {
+                $(this).css({
+                    "background": "url('images/cow.gif') no-repeat center", "background-size": "contain"
+                });
+            });
+            $("div.sapi").click(function () {
+                $("<audio></audio>").attr({
+                    'src': 'audio/suara-sapi.mp3',
+                    'volume': 0.5,
+                    'autoplay': 'autoplay'
+                }).appendTo("div");
+            });
+            // Hewan Peliharaan
+            // kucing
+            $("div.kucing").click(function () {
+                $(this).css({
+                    "background": "url('images/kucing.gif') no-repeat center", "background-size": "contain"
+                });
+            });
+            $("div.kucing").click(function () {
+                $("<audio></audio>").attr({
+                    'src': 'audio/suara-kucing.mp3',
+                    'volume': 0.5,
+                    'autoplay': 'autoplay'
+                }).appendTo("div");
+            });
+            // anjing
+            $("div.anjing").click(function () {
+                $(this).css({
+                    "background": "url('images/anjing.gif') no-repeat center", "background-size": "contain"
+                });
+            });
+            $("div.anjing").click(function () {
+                $("<audio></audio>").attr({
+                    'src': 'audio/suara-anjing.mp3',
+                    'volume': 0.5,
+                    'autoplay': 'autoplay'
+                }).appendTo("div");
+            });
+            // burung
+            $("div.burung").click(function () {
+                $(this).css({
+                    "background": "url('images/burungpipit.gif') no-repeat center", "background-size": "contain"
+                });
+            });
+            $("div.burung").click(function () {
+                $("<audio></audio>").attr({
+                    'src': 'audio/suara-burung-pipit.mp3',
+                    'volume': 0.5,
+                    'autoplay': 'autoplay'
+                }).appendTo("div");
+            });
+            // badak
+            $("div.badak").click(function () {
+                $(this).css({
+                    "background": "url('images/badak.gif') no-repeat center", "background-size": "contain"
+                });
+            });
+            $("div.badak").click(function () {
+                $("<audio></audio>").attr({
+                    'src': 'audio/suara-badak.mp3',
+                    'volume': 0.4,
+                    'autoplay': 'autoplay'
+                }).appendTo("div");
+            });
+            // serigala
+            $("div.serigala").click(function () {
+                $(this).css({
+                    "background": "url('images/serigala.gif') no-repeat center", "background-size": "contain"
+                });
+            });
+            $("div.serigala").click(function () {
+                $("<audio></audio>").attr({
+                    'src': 'audio/suara-serigala.mp3',
+                    'volume': 0.5,
+                    'autoplay': 'autoplay'
+                }).appendTo("div");
+            });
+            // ular
+            $("div.ular").click(function () {
+                $(this).css({
+                    "background": "url('images/cobra.gif') no-repeat center", "background-size": "contain"
+                });
+            });
+            $("div.ular").click(function () {
+                $("<audio></audio>").attr({
+                    'src': 'audio/suara-kobra.mp3',
+                    'volume': 0.7,
+                    'autoplay': 'autoplay'
+                }).appendTo("div");
+            });
+        });
+    </script>
+</body>
+</html>
